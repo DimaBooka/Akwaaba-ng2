@@ -1,4 +1,8 @@
-# Akwa2
+# Akwaaba project
+
+Upgrade Angular version from version 1.4 to 4.0
+
+-------------------------------------------------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.2.
 
