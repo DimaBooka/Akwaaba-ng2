@@ -21,6 +21,9 @@ import { PlayerModule } from './player/player.module';
     PlaylistModule,
     PlayerModule
   ],
+  exports: [
+    RouterModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

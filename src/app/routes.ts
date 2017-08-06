@@ -31,7 +31,8 @@ export const routes: Routes = [
   { path: 'about-us', component: AboutComponent },
   { path: 'main', component: MainComponent },
   { path: 'request-invite', component: RequestComponent },
-  { path: 'player', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'player', component: PlayerComponent },
   { path: '', component: PlayerComponent },
   { path: '**', redirectTo: "" }
 ];
