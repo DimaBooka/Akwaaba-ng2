@@ -1,23 +1,34 @@
-<div class="full-page">
+<div class="full-page" [ngClass]="{'has-errors': (email.touched || code.touched) && (email.invalid || code.invalid)}">
+  <div class="login-holder">
+    <div class="img-holder">
+      <img src="/assets/images/logo-white.png" alt="Akwaaba.FM">
+    </div>
 
-  <h1>Akwaaba.FM</h1>
+    <h3>We believe in music</h3>
 
-  <h3>We believe in music</h3>
+    <div class="pre-invite">Please enter your invite code below to enter the website</div>
 
-  <div>Please enter your invite code below to enter the website</div>
+    <form (submit)="submitForLogin()">
+      <input type="text" name="email" [(ngModel)]="loginModel.email" placeholder="Enter your email"
+             #email="ngModel" required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}">
+      <div class="help-block" [hidden]="email.valid || email.untouched">
+        <span *ngIf="loginModel.email.length == 0">Email is required</span>
+        <span *ngIf="loginModel.email.length > 0">Please type in the correct email</span>
+      </div>
+      <input type="password" name="code" [(ngModel)]="loginModel.code" placeholder="Enter your invite code"
+             #code="ngModel" required pattern="[a-zA-Z0-9]{6}">
+      <div class="help-block" [hidden]="code.valid || code.untouched">
+        <span *ngIf="loginModel.code.length == 0">Invite code is need to access the website</span>
+        <span *ngIf="loginModel.code.length > 0">Your code should contain only alphanumeric and should not be less than 6 characters</span>
+      </div>
 
-  <form>
-    <input type="text" placeholder="Enter your email here">
-    <input type="password" placeholder="Enter your invite code">
-    <input type="submit" value="SUBMIT">
-  </form>
+      <input type="submit" value="SUBMIT" [disabled]="email.invalid || code.invalid" >
+    </form>
 
 
-  <div>
-    Doesn't have an invite code? Request for invite
+    <div class="request-code" routerLink="/request-invite">Doesn't have an invite code? Request for invite</div>
+
+
+    <footer>© 2017 AkwaabaFM. All Rights Reserved.</footer>
   </div>
-
-
-  <footer>© 2017 AkwaabaFM. All Rights Reserved.</footer>
-
 </div>

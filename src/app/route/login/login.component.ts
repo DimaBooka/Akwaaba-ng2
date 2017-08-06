@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Login } from '../../shared/models/login.model';
 
 @Component({
   selector: 'login',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  private loginModel: Login = new Login();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  submitForLogin() {
+    console.log(this.loginModel);
+  }
 }

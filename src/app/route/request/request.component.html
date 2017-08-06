@@ -1,3 +1,26 @@
-<p>
-  request works!
-</p>
+<div class="full-page" [ngClass]="{'has-errors': email.touched && email.invalid}">
+  <div class="request-holder">
+    <div class="img-holder">
+      <img src="/assets/images/logo-white.png" alt="Akwaaba.FM">
+    </div>
+
+    <h3>We believe in music</h3>
+
+    <div class="pre-invite">Akwaaba.fm is about to launch! Want to test it first?
+      Share your email, we will send your login details for private beta testing</div>
+
+    <form (submit)="submitForRequest()">
+      <input type="text" name="email" [(ngModel)]="requestModel.email" placeholder="Enter your email"
+             #email="ngModel" required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}">
+      <div class="help-block" [hidden]="email.valid || email.untouched">
+        <span *ngIf="requestModel.email.length == 0">Email is required</span>
+        <span *ngIf="requestModel.email.length > 0">Please type in the correct email</span>
+      </div>
+      <input type="submit" value="SUBMIT" [disabled]="email.invalid" >
+    </form>
+
+    <div class="request-code" routerLink="/login">Have an invite code? Click here to login</div>
+
+    <footer>© 2017 AkwaabaFM. All Rights Reserved.</footer>
+  </div>
+</div>

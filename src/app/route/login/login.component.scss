@@ -4,11 +4,53 @@
   height: 100%;
   z-index: 1050;
   position: fixed;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: url(/assets/images/bg.png) black no-repeat;
+  background-size: cover;
+
+  .login-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  &.has-errors {
+    padding-top: 20px;
+  }
+
+  .img-holder {
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  h3 {
+    margin: 15px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    background: #292929;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.3);
+  }
 
   form {
     display: flex;
@@ -23,7 +65,7 @@
       padding: 6px 25px;
       font-size: 18px;
       text-align: center;
-      margin: 30px auto;
+      margin: 20px auto;
       border: none;
 
       &:focus {
@@ -37,7 +79,7 @@
       background-color: #ffbc01;
       border: none;
       padding: 12px 30px;
-      margin: 30px auto;
+      margin: 20px auto;
 
       &:focus {
         outline: none;
@@ -46,4 +88,25 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .pre-invite, .img-holder, .request-code, .help-block {
+    font-size: 13px;
+    padding: 0 23px;
+  }
 
+  .request-code {
+    height: 70px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .full-page {
+    overflow-x: auto;
+
+    form {
+      width: 350px;
+    }
+  }
+}

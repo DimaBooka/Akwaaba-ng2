@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { RouterModule } from '@angular/router';
 
 import { NewSongsComponent } from './new-songs/new-songs.component';
 import { ContactComponent } from './contact/contact.component';
@@ -20,6 +23,8 @@ import { PlayerComponent } from './player/player.component';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    RouterModule
   ],
   declarations: [
     NewSongsComponent,

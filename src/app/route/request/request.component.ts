@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Request } from '../../shared/models/request.model';
 
 @Component({
   selector: 'request-invite',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestComponent implements OnInit {
 
+  private requestModel: Request = new Request();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  submitForRequest() {
+    console.log(this.requestModel);
+  }
 }
